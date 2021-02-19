@@ -3,13 +3,16 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dev": "nodemon src/main.js"
+    "dev": "nodemon src/main.js",
+    "start": "forever start src/main.js",
+    "stop": "forever stop src/main.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "asterisk-manager": "^0.1.16",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "forever": "^3.0.4"
   }
 }
