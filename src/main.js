@@ -1,13 +1,15 @@
 const express = require('express')
 const moveCall = require('./moveFile')
 const RecallStore = require('./recallStore')
-//const ami = new require('asterisk-manager')('5038','asterisk.jpbx.com.br','node','jefao123', false)
 const ami = new require('asterisk-manager')('5038','localhost','teste','vipadmin', false)
 
 
 // AMI
 ami.keepConnected()
-ami.on('hangup', (hangup) => moveCall(hangup.calleridnum))
+ami.on('hangup', (hangup) => {
+  const peer = hangup.channel.substr(hangup.channel.indexOf('/')+1)
+  moveCall(peer.substr(0, peer.indexOf('-')))
+})
 
 // EXPRESS
 const app = express()
@@ -20,7 +22,8 @@ app.get('/add/:peer', (req, res) => {
 })
 
 app.get('/recalls', (req, res) => {
-  res.json(RecallStore.recalls)
+  console.log(RecallStore.recalls);
+  res.json(RecallStore.recalls.size)
 })
 
 app.get('/move/:peer', (req, res) => {
