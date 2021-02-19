@@ -2,9 +2,9 @@ const fs = require('fs')
 const RecallStore = require('./recallStore')
 
 function moveCall(peer){
-    const callFile = `${peer}-call.call`
-    var oldPath = `/Users/jefaokpta/Downloads/${callFile}`
-    var newPath = `/Users/jefaokpta/Downloads/MOVIES/${callFile}`
+    const callFile = `CALLBACK-${peer}.call`
+    var oldPath = `/tmp/${callFile}`
+    var newPath = `/var/spool/asterisk/outgoing/${callFile}`
     console.log(`Verificando se há recall para ${peer}`);
     if(RecallStore.recalls.has(peer)){
         RecallStore.recalls.delete(peer)
