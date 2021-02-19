@@ -1,0 +1,41 @@
+
+{// RECEPTOR
+    event: 'Hangup',
+    privilege: 'call,all',
+    channel: 'PJSIP/6001-00000006',
+    channelstate: '6',
+    channelstatedesc: 'Up',
+    calleridnum: '6001',
+    calleridname: '<unknown>',
+    connectedlinenum: '7001',
+    connectedlinename: '<unknown>',
+    language: 'en',
+    accountcode: '',
+    context: 'Vip-Peers',
+    exten: '',
+    priority: '1',
+    uniqueid: '1613744369.10',
+    linkedid: '1613744369.9',
+    cause: '16',
+    cause-txt: 'Normal Clearing'
+  }
+  { // ORIGINADOR
+    event: 'Hangup',
+    privilege: 'call,all',
+    channel: 'PJSIP/7001-00000005',
+    channelstate: '6',
+    channelstatedesc: 'Up',
+    calleridnum: '7001',
+    calleridname: '<unknown>',
+    connectedlinenum: '6001',
+    connectedlinename: '<unknown>',
+    language: 'en',
+    accountcode: '',
+    context: 'Vip-Peers',
+    exten: 'h',
+    priority: '1',
+    uniqueid: '1613744369.9',
+    linkedid: '1613744369.9',
+    cause: '16',
+    'cause-txt': 'Normal Clearing'
+  }
